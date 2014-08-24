@@ -173,7 +173,7 @@ class WgetArgs(object):
             "-e", "robots=off",
             "--no-cookies",
             "--rotate-dns",
-            "--recursive", "--level=inf",
+#            "--recursive", "--level=inf",
             "--no-parent",
             "--page-requisites",
             "--timeout", "30",
@@ -186,28 +186,30 @@ class WgetArgs(object):
             "--warc-header", "mundia-dld-script-version: " + VERSION,
             "--warc-header", ItemInterpolation("mundia-user: %(item_name)s"),
         ]
-
+        
         item_name = item['item_name']
         assert ':' in item_name
         item_type, item_value = item_name.split(':', 1)
-
-        assert item_type
-        assert item_value
-
+        
         item['item_type'] = item_type
         item['item_value'] = item_value
-
-        wget_args.append('http://{0}.swipnet.se/{1}/'.format(item_type, item_value))
-
-        # wget_args.append('http://home.swipnet.se/{0}/'.format(item_name))
-
+        
+        assert item_type in ('surnames')
+        
+        if item_type == 'surnames':
+            assert ':' in item_value
+            item_lang, item_surname = item_value.split(':', 1)
+            item['item_lang'] = item_lang
+            item['item_surname'] = item_surname
+            wget_args.append('http://www.mundia.com/{0}/surnames/{1}'.format(item_lang, item_surname))
+        
         if 'bind_address' in globals():
             wget_args.extend(['--bind-address', globals()['bind_address']])
             print('')
             print('*** Wget will bind address at {0} ***'.format(
                 globals()['bind_address']))
             print('')
-
+            
         return realize(wget_args, item)
 
 ###########################################################################
