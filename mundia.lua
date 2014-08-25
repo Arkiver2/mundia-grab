@@ -30,6 +30,8 @@ wget.callbacks.get_urls = function(file, url, is_css, iri)
   local html = nil
   
   if string.match(url, "%.mundia%.com/%a+/Person/%d+/%p?%d+") then
+  end
+end
   
 
 wget.callbacks.httploop_result = function(url, err, http_stat)
