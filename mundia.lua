@@ -29,7 +29,17 @@ wget.callbacks.get_urls = function(file, url, is_css, iri)
   local urls = {}
   local html = nil
   
-  if string.match(url, "%.mundia%.com/%a+/Person/%d+/%p?%d+") then
+  --example url: http://www.mundia.com/us/Person/743375/6809259973
+  --example url: http://www.mundia.com/us/Person/12748608/-190814136
+  if string.match(url, "%.mundia%.com/[a-z]+/Person/[0-9]+/[0-9-]+") then
+    
+  elseif string.match(url, "%.mundia%.com/[a-z]+/Person/[0-9]+/[0-9]+") then
+    
+  end
+  
+  --example url: http://www.mundia.com/us/Search/Results?surname=AMES&birthPlace=United%20States
+  if string.match(url, "%.mundia%.com/[a-z]+/Search/Results%?surname=[A-Z]+&birthPlace=[a-zA-z%20]+") then
+    
   end
 end
   
