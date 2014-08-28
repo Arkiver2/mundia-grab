@@ -1,3 +1,7 @@
+dofile("urlcode.lua")
+dofile("table_show.lua")
+JSON = (loadfile "JSON.lua")()
+
 local url_count = 0
 local tries = 0
 
