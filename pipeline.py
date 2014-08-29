@@ -220,9 +220,9 @@ class WgetArgs(object):
 project = Project(
     title="Mundia",
     project_html="""
-        <img class="project-logo" alt="Project logo" src="http://archiveteam.org/images/8/81/Frank_sheep_poses.jpg" height="50px" title=""/>
-        <h2>home.swipnet.se <span class="links"><a href="http://home.swipnet.se/">Website</a> &middot; <a href="http://tracker.archiveteam.org/swipnet/">Leaderboard</a></span></h2>
-        <p>Archiving Swedish websites from home.swipnet.se.</p>
+        <img class="project-logo" alt="Project logo" src="http://archiveteam.org/images/d/da/MundiaLogoMedium.png" height="50px" title=""/>
+        <h2>www.mundia.com <span class="links"><a href="http://www.mundia.com/">Website</a> &middot; <a href="http://tracker.archiveteam.org/mundia/">Leaderboard</a></span></h2>
+        <p>Archiving mundia.com.</p>
     """,
     utc_deadline=datetime.datetime(2014, 8, 31, 23, 59, 0)
 )
