@@ -224,7 +224,7 @@ project = Project(
         <h2>www.mundia.com <span class="links"><a href="http://www.mundia.com/">Website</a> &middot; <a href="http://tracker.archiveteam.org/mundia/">Leaderboard</a></span></h2>
         <p>Archiving mundia.com.</p>
     """,
-    utc_deadline=datetime.datetime(2014, 8, 31, 23, 59, 0)
+    utc_deadline=datetime.datetime(2014, 9, 30, 23, 59, 0)
 )
 
 pipeline = Pipeline(
