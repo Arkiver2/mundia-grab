@@ -46,13 +46,10 @@ wget.callbacks.get_urls = function(file, url, is_css, iri)
   
   --example url: http://www.mundia.com/us/surnames/aleo
   if string.match(url, "%.mundia%.com/[^/]+/surnames/[^/]+") then
-    if not html then
-      html = read_fie(file)
-    end
-    
     local surname_lower = string.match(url, "%.mundia%.com/[^/]+/surnames/([^/]+)")
     local surname_upper = string.upper(surname_lower)
     local country_code = string.match(url, "%.mundia%.com/([^/]+)/surnames/[^/]+")
+    
     --chfoo - is it alright is I add all these urls for all countries?
     table.insert(urls, { url="http://www.mundia.com/"..country_code.."/Search/Results?surname="..surname_upper.."&birthPlace=Afghanistan" })
     table.insert(urls, { url="http://www.mundia.com/"..country_code.."/Search/Results?surname="..surname_upper.."&birthPlace=Albania" })
